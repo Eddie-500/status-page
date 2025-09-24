@@ -3,7 +3,7 @@
     "state": "updating",
     "lastUpdate": "Sep 24, 2025 10:00 PM",
     "services": [
-      { "name": "Kickbot", "uptime": "88.97%", "status": "updating" }
+      { "name": "Kickbot", "uptime": "88.97%", "status": "updating" },
       { "name": "Kickbot.pro", "uptime": "99.92%", "status": "operational" }
     ]
   },
