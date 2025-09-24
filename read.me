@@ -1,23 +1,174 @@
-🔹 4. Cómo añadir un maintenance o incident
-➕ Nuevo Maintenance
+🔹 1. Crear otro Service
 
-Solo agrega otro objeto en "maintenance":
+En la sección "services" puedes listar varios.
+Ejemplo con 2 servicios:
+
+"services": [
+  { "name": "Kickbot", "uptime": "99.97%", "status": "operational" },
+  { "name": "Dashboard Web", "uptime": "99.92%", "status": "down" }
+]
+
+
+👉 Cada servicio puede tener status:
+
+"operational" → ✅ verde
+
+"updating" → 🟠 con spinner animado
+
+"down" → ❌ rojo
+
+🔹 2. Crear otro Maintenance
+
+En la sección "maintenance" agregas objetos con date e info:
+
+"maintenance": [
+  {
+    "date": "Oct 5, 2025",
+    "info": "Kickbot database optimization"
+  },
+  {
+    "date": "Oct 10, 2025",
+    "info": "Dashboard redesign rollout"
+  }
+]
+
+
+👉 Se mostrarán en lista bajo la pestaña Maintenance.
+
+🔹 3. Crear otro Incident
+
+En la sección "incidents" agregas objetos con date, title, status y updates:
+
+"incidents": [
+  {
+    "date": "Sep 20, 2025",
+    "title": "Kickbot outage",
+    "status": "resolved",
+    "updates": [
+      { "time": "02:00 UTC", "text": "Issue detected." },
+      { "time": "02:15 UTC", "text": "Engineers investigating." },
+      { "time": "02:45 UTC", "text": "Service restored." }
+    ]
+  },
+  {
+    "date": "Sep 25, 2025",
+    "title": "Dashboard loading issues",
+    "status": "updating",
+    "updates": [
+      { "time": "14:00 UTC", "text": "Users reporting slow responses." },
+      { "time": "14:30 UTC", "text": "Investigation ongoing." }
+    ]
+  }
+]
+
+
+👉 El status del incidente puede ser:
+
+"resolved" → verde ✅
+
+"updating" → naranja 🟠 con animación
+
+"down" → rojo ❌
+
+🔹 4. Pasos para que se vean en Vercel
+
+Edita data.json en tu repo.
+
+Guarda y haz git commit + git push.
+
+Vercel redeploya automáticamente (tarda < 1 min).
+
+Refresca tu página → verás los nuevos servicios/incidentes.
+
+📌 Ejemplo de data.json con todo junto:
 
 {
-  "date": "Oct 15, 2025",
-  "info": "Planned downtime for system updates"
-}
-
-➕ Nuevo Incident
-
-Agrega en "incidents":
-
-{
-  "date": "Sep 25, 2025",
-  "title": "Kickbot delays",
-  "status": "updating",
-  "updates": [
-    { "time": "14:00 UTC", "text": "Reports of slow response." },
-    { "time": "14:30 UTC", "text": "Investigation ongoing." }
+  "status": {
+    "state": "operational",
+    "lastUpdate": "Sep 24, 2025 11:30 PM",
+    "services": [
+      { "name": "Kickbot", "uptime": "99.97%", "status": "operational" },
+      { "name": "Dashboard Web", "uptime": "99.92%", "status": "down" }
+    ]
+  },
+  "maintenance": [
+    { "date": "Oct 5, 2025", "info": "Kickbot database optimization" },
+    { "date": "Oct 10, 2025", "info": "Dashboard redesign rollout" }
+  ],
+  "incidents": [
+    {
+      "date": "Sep 20, 2025",
+      "title": "Kickbot outage",
+      "status": "resolved",
+      "updates": [
+        { "time": "02:00 UTC", "text": "Issue detected." },
+        { "time": "02:45 UTC", "text": "Service restored." }
+      ]
+    },
+    {
+      "date": "Sep 25, 2025",
+      "title": "Dashboard loading issues",
+      "status": "updating",
+      "updates": [
+        { "time": "14:00 UTC", "text": "Users reporting slow responses." },
+        { "time": "14:30 UTC", "text": "Investigation ongoing." }
+      ]
+    }
   ]
 }
+
+
+👉 ¿Quieres que te arme un data.json plantilla vacío (con solo la estructura básica) para que solo copies/pegues y vayas añadiendo services, maintenance e incidents fácilmente?
+
+You said:
+en que script esta eso?
+ChatGPT said:
+
+Muy buena pregunta 👌.
+Te aclaro cómo está organizado todo:
+
+📂 Estructura de tu página
+
+index.html → Tiene el esqueleto (las secciones vacías con los id = status, maintenance, incidents).
+
+style.css → Colores, diseño, animaciones, hover, etc.
+
+script.js → Aquí está toda la lógica que lee el data.json y pinta el contenido en esas secciones.
+
+data.json → Aquí es donde tú añades o cambias los services, maintenance e incidents.
+
+📌 Importante
+
+Lo que me pediste (“crear otro service, maintenance e incident”) no se hace en el script, sino en el archivo data.json.
+
+El script.js ya está programado para:
+
+Leer "services" y listarlos.
+
+Leer "maintenance" y listarlos.
+
+Leer "incidents" y listarlos con updates.
+
+👉 O sea: tú no tocas el script para añadir más cosas.
+Solo editas el data.json.
+
+🔎 Ejemplo rápido
+
+En data.json pones:
+
+"services": [
+  { "name": "Kickbot", "uptime": "99.97%", "status": "operational" },
+  { "name": "Dashboard Web", "uptime": "99.92%", "status": "down" }
+]
+
+
+El script.js automáticamente detecta esos dos servicios y los muestra.
+Lo mismo con maintenance y incidents.
+
+✅ En resumen:
+
+script.js → ya está hecho, no lo modificas.
+
+data.json → aquí es donde creas / borras / editas los services, maintenance e incidents.
+
+¿Quieres que te arme un data.json plantilla vacío (con campos ya listos) para que solo vayas rellenando sin preocuparte de romper el formato?
