@@ -16,8 +16,8 @@
   "incidents": [
     {
       "date": "Sep 3, 2025",
-      "title": "Kickbot outage",
-      "status": "Not resolved",
+      "title": "Kickbot **Offline**",
+      "status": "not resolved",
       "updates": [
         { "time": "02:00 UTC", "text": "Issue detected." },
         { "time": "02:15 UTC", "text": "Engineers investigating." },
