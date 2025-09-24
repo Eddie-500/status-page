@@ -55,5 +55,18 @@ async function loadData() {
   }
 }
 
+// --- Tabs ---
+document.querySelectorAll(".tab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    // quitar active de todos
+    document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+
+    // activar el clicado
+    btn.classList.add("active");
+    document.getElementById(btn.dataset.tab).classList.add("active");
+  });
+});
+
 // Run
 loadData();
