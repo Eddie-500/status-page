@@ -128,3 +128,39 @@ nav button.active {
   background-color: #0a58ca;
   transform: scale(0.95);
 }
+
+/* Contenedor del logo centrado */
+.logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Imagen del logo (responsivo) */
+.logo {
+  display: block;
+  height: clamp(56px, 8vw, 110px); /* se adapta a pantalla */
+  width: auto;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+  transition: transform .25s ease, filter .25s ease;
+}
+
+/* Efecto sutil al pasar el mouse */
+.logo:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.45));
+}
+
+/* Si usas logo + texto en fila */
+.logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+header h1 {
+  margin: 0;
+}
+
