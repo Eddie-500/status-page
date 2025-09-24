@@ -4,6 +4,7 @@ body {
   color: #fff;
   margin: 0;
   padding: 0;
+  transition: background 0.3s ease;
 }
 
 header {
@@ -25,6 +26,12 @@ nav button {
   padding: 12px 20px;
   cursor: pointer;
   font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  color: #3b82f6;
+  transform: scale(1.05);
 }
 
 nav button.active {
@@ -35,30 +42,46 @@ nav button.active {
 .tab-content {
   display: none;
   padding: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
 }
 
 .tab-content.active {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.status-box {
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.operational { background: #16a34a33; border-left: 5px solid #16a34a; }
-.down { background: #dc262633; border-left: 5px solid #dc2626; }
-.maintenance { background: #f59e0b33; border-left: 5px solid #f59e0b; }
-
-.incident {
+.status-box, .incident {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: #1e293b;
   border: 1px solid #333;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.incident h3 { margin: 0; }
-.incident .more { color: #3b82f6; cursor: pointer; }
-.incident-updates { display: none; margin-top: 10px; }
+.status-box:hover, .incident:hover {
+  transform: scale(1.02);
+  background: #273549;
+}
 
+.operational { border-left: 5px solid #16a34a; }
+.down { border-left: 5px solid #dc2626; }
+.maintenance { border-left: 5px solid #f59e0b; }
+
+.incident h3 { margin: 0 0 10px 0; }
+.incident .more { color: #3b82f6; cursor: pointer; transition: color 0.3s ease; }
+.incident .more:hover { color: #60a5fa; }
+
+.incident-updates {
+  display: none;
+  margin-top: 10px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
