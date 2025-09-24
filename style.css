@@ -107,3 +107,24 @@ nav button.active {
   0% { transform: rotate(0); }
   100% { transform: rotate(360deg); }
 }
+
+.details-btn {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.details-btn:hover {
+  background-color: #0d6efd;
+  transform: scale(1.05);
+}
+
+.details-btn:active {
+  background-color: #0a58ca;
+  transform: scale(0.95);
+}
