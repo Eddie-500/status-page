@@ -60,3 +60,14 @@ document.querySelectorAll(".tab").forEach(btn => {
 
 loadData();
 
+// Parte de animaciones
+function toggleUpdates(id) {
+  const el = document.getElementById("updates-" + id);
+  if (el.style.display === "block") {
+    el.style.display = "none";
+  } else {
+    el.style.display = "block";
+    el.style.animation = "fadeIn 0.5s ease";
+  }
+}
+
