@@ -3,24 +3,24 @@
     "state": "updating",
     "lastUpdate": "Sep 24, 2025 10:00 PM",
     "services": [
-      { "name": "Kickbot", "uptime": "99.97%", "status": "updating" }
+      { "name": "Kickbot", "uptime": "88.97%", "status": "updating" }
     ]
   },
   "maintenance": [
     {
-      "date": "Oct 5, 2025",
-      "info": "Kickbot database optimization"
+      "date": "Sep 18, 2025",
+      "info": "Kickbot is updating **Improvements** It’s running faster, comes with a fresh new design"
     }
   ],
   "incidents": [
     {
-      "date": "Sep 20, 2025",
+      "date": "Sep 3, 2025",
       "title": "Kickbot outage",
-      "status": "resolved",
+      "status": "Not resolved",
       "updates": [
         { "time": "02:00 UTC", "text": "Issue detected." },
         { "time": "02:15 UTC", "text": "Engineers investigating." },
-        { "time": "02:45 UTC", "text": "Service restored." }
+        { "time": "02:45 UTC", "text": "Service shut down for **UPDATE**." }
       ]
     }
   ]
