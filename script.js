@@ -4,7 +4,7 @@ async function loadData() {
     const data = await res.json();
 
     // --- Status ---
-    const statusSection = document.getElementById("status"); // ✅ ahora sí definido
+    const statusSection = document.getElementById("status");
     document.getElementById("lastUpdate").textContent =
       "Last update: " + data.status.lastUpdate;
 
@@ -32,9 +32,9 @@ async function loadData() {
       maintenanceSection.innerHTML = "<p>No scheduled maintenance.</p>";
     } else {
       maintenanceSection.innerHTML = data.maintenance.map(m => `
-        <div class="status-box">
-          <strong>${m.title}</strong><br>
-          ${m.date} - ${m.description}
+        <div class="status-box maintenance">
+          <strong>${m.date}</strong><br>
+          ${m.info}
         </div>`).join("");
     }
 
@@ -43,10 +43,14 @@ async function loadData() {
     if (data.incidents.length === 0) {
       incidentsSection.innerHTML = "<p>No incidents reported.</p>";
     } else {
-      incidentsSection.innerHTML = data.incidents.map(i => `
+      incidentsSection.innerHTML = data.incidents.map((i, index) => `
         <div class="status-box">
           <strong>${i.title}</strong><br>
-          ${i.date} - ${i.description}
+          ${i.date} - ${i.status}
+          <br><button class="details-btn" onclick="toggleDetails(${index})">See details</button>
+          <div class="details" id="details-${index}" style="display:none; margin-top:8px;">
+            ${i.updates.map(u => `<p><strong>${u.time}</strong> - ${u.text}</p>`).join("")}
+          </div>
         </div>`).join("");
     }
 
@@ -55,16 +59,31 @@ async function loadData() {
   }
 }
 
+// --- Toggle details for incidents ---
+function toggleDetails(index) {
+  const details = document.getElementById("details-" + index);
+  const button = details.previousElementSibling;
+  if (details.style.display === "none") {
+    details.style.display = "block";
+    button.textContent = "Hide details";
+  } else {
+    details.style.display = "none";
+    button.textContent = "See details";
+  }
+}
+
 // --- Tabs ---
 document.querySelectorAll(".tab").forEach(btn => {
   btn.addEventListener("click", () => {
-    // quitar active de todos
     document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
     document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
-
-    // activar el clicado
     btn.classList.add("active");
     document.getElementById(btn.dataset.tab).classList.add("active");
+  });
+});
+
+loadData();
+
   });
 });
 
