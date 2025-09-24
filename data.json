@@ -1,1 +1,30 @@
+{
+  "status": {
+    "overall": "operational",
+    "message": "All systems are operational",
+    "lastUpdate": "Sep 24, 2025 10:00 PM",
+    "services": [
+      { "name": "Website", "uptime": "99.97%", "status": "operational" },
+      { "name": "API", "uptime": "99.95%", "status": "operational" }
+    ]
+  },
+  "maintenance": [
+    {
+      "date": "September 24, 2025",
+      "info": "Database upgrade scheduled at 02:00 UTC"
+    }
+  ],
+  "incidents": [
+    {
+      "date": "Sep 20, 2025",
+      "title": "Website outage",
+      "status": "resolved",
+      "updates": [
+        { "time": "02:00 UTC", "text": "Issue detected." },
+        { "time": "02:15 UTC", "text": "Engineers investigating." },
+        { "time": "02:45 UTC", "text": "Issue resolved." }
+      ]
+    }
+  ]
+}
 
