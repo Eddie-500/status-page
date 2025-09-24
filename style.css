@@ -85,3 +85,25 @@ nav button.active {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Estados */
+.status-online { color: #16a34a; font-weight: bold; }
+.status-updating { color: #f59e0b; font-weight: bold; }
+.status-down { color: #dc2626; font-weight: bold; }
+
+/* Emoji + animación de carga */
+.loading {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #f59e0b;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 6px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
