@@ -1,27 +1,42 @@
 {
   "status": {
-    "state": "updating",
-    "lastUpdate": "Sep 24, 2025 10:00 PM",
+    "state": "operational",
+    "lastUpdate": "Sep 25, 2025 11:00 AM",
     "services": [
-      { "name": "Kickbot", "uptime": "88.97%", "status": "updating" },
-      { "name": "Kickbot.pro", "uptime": "99.92%", "status": "operational" }
+      { "name": "Kickbot", "uptime": "89.45%", "status": "operational" },
+      { "name": "Kickbot.pro", "uptime": "99.92%", "status": "operational" },
+      { "name": "Beta Kickbot", "uptime": "75.12%", "status": "degraded" }
     ]
   },
   "maintenance": [
     {
       "date": "Sep 18, 2025",
-      "info": "Kickbot is updating. Improvements: running faster, new design applied."
+      "info": "Kickbot is updating **Improvements** It’s running faster, comes with a fresh new design"
+    },
+    {
+      "date": "Sep 25, 2025",
+      "info": "Bot updated successfully. Performance enhancements applied."
     }
   ],
   "incidents": [
     {
       "date": "Sep 3, 2025",
-      "title": "Kickbot Offline",
+      "title": "Kickbot **Offline**",
       "status": "not resolved",
       "updates": [
         { "time": "02:00 UTC", "text": "Issue detected." },
         { "time": "02:15 UTC", "text": "Engineers investigating." },
-        { "time": "02:45 UTC", "text": "Service shut down for update." }
+        { "time": "02:45 UTC", "text": "Service shut down for **UPDATE**." }
+      ]
+    },
+    {
+      "date": "Sep 24, 2025",
+      "title": "Database outage",
+      "status": "resolved",
+      "updates": [
+        { "time": "09:30 UTC", "text": "Database connection issues detected." },
+        { "time": "10:00 UTC", "text": "Engineers applied a hotfix." },
+        { "time": "10:20 UTC", "text": "All services restored. Incident resolved." }
       ]
     }
   ]
