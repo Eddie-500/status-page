@@ -1,62 +1,36 @@
-.app-container {
-  display: flex;
-  height: 100vh;
-  background: #111;
-  color: #eee;
-  font-family: Arial, sans-serif;
+.card {
+  border-radius: 1rem; /* burbuja */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.sidebar {
-  width: 220px;
-  background: rgba(0,0,0,0.8);
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-.sidebar .logo img {
-  max-width: 150px;
-  margin: 0 auto 20px;
+.card-green {
+  background-color: rgba(34, 197, 94, 0.15); /* verde */
+  border: 1px solid rgba(34, 197, 94, 0.5);
 }
 
-.sidebar nav ul {
-  list-style: none;
-  padding: 0;
+.card-orange {
+  background-color: rgba(251, 146, 60, 0.15); /* naranja */
+  border: 1px solid rgba(251, 146, 60, 0.5);
 }
 
-.sidebar nav ul li {
-  margin: 10px 0;
+.card-red {
+  background-color: rgba(239, 68, 68, 0.15); /* rojo */
+  border: 1px solid rgba(239, 68, 68, 0.5);
 }
 
-.sidebar nav ul li button {
-  width: 100%;
-  background: transparent;
-  color: #aaa;
-  border: none;
-  padding: 10px;
-  text-align: left;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.2s;
+button {
+  transition: all 0.2s ease;
 }
 
-.sidebar nav ul li button:hover {
-  background: #0f0;
-  color: #000;
-}
-
-.sidebar-footer {
-  text-align: center;
-}
-
-.discord-icon {
-  width: 40px;
-  height: 40px;
-}
-
-.main-panel {
-  flex: 1;
-  padding: 20px;
+.tab-btn.active {
+  color: #22c55e; /* verde Tailwind */
+  border-bottom: 2px solid #22c55e;
 }
