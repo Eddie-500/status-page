@@ -31,12 +31,12 @@
     },
     {
       "date": "Sep 24, 2025",
-      "title": "Database outage",
+      "title": "Kickbot **Updated**",
       "status": "resolved",
       "updates": [
-        { "time": "09:30 UTC", "text": "Database connection issues detected." },
-        { "time": "10:00 UTC", "text": "Engineers applied a hotfix." },
-        { "time": "10:20 UTC", "text": "All services restored. Incident resolved." }
+        { "time": "09:30 UTC", "text": "Bot starting." },
+        { "time": "10:00 UTC", "text": "Bot deployed" },
+        { "time": "10:20 UTC", "text": "All services **UPDATED**." }
       ]
     }
   ]
