@@ -160,6 +160,26 @@ nav button.active {
   gap: 14px;
 }
 
+.discord-fixed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999; /* siempre arriba del contenido */
+}
+
+.discord-fixed .icon {
+  height: 44px;
+  width: 44px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.discord-fixed .icon:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px #5865F2); /* brillo morado de Discord */
+}
+
+
 header h1 {
   margin: 0;
 }
