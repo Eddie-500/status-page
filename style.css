@@ -160,13 +160,6 @@ nav button.active {
   gap: 14px;
 }
 
-.discord-fixed {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 999; /* siempre arriba del contenido */
-}
-
 .discord-fixed .icon {
   height: 44px;      /* controla solo la altura */
   width: auto;       /* ancho se ajusta solo */
