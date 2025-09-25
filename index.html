@@ -1,39 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Status Page</title>
-  <link rel="stylesheet" href="style.css">
-</head>
 <body>
-<header>
-  <a href="/" class="logo-wrap" aria-label="Kickbot Home">
-    <img src="kickbot-logo.png" alt="Kickbot" class="logo">
-  </a>
-  <p id="lastUpdate"></p>
-</header>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="Short_logo_kickbot_v.2-removebg-preview.png" alt="Kickbot Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><button onclick="showSection('status')">📊 Status</button></li>
+          <li><button onclick="showSection('maintenance')">🛠️ Maintenance</button></li>
+          <li><button onclick="showSection('incidents')">⚠️ Incidents</button></li>
+          <li><button onclick="alert('Chatbot coming soon!')">🤖 Chatbot</button></li>
+          <li><button onclick="alert('Support section coming soon!')">❓ Support</button></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="https://discord.gg/xxxx" target="_blank">
+          <img src="Discord-Logo.png" alt="Discord" class="discord-icon">
+        </a>
+      </div>
+    </aside>
 
-  <nav>
-    <button class="tab active" data-tab="status">Status</button>
-    <button class="tab" data-tab="maintenance">Maintenance</button>
-    <button class="tab" data-tab="incidents">Incidents</button>
-  </nav>
-
-  <main>
-    <section id="status" class="tab-content active"></section>
-    <section id="maintenance" class="tab-content"></section>
-    <section id="incidents" class="tab-content"></section>
-  </main>
-
-  <script src="script.js"></script>
-
-  <div class="discord-fixed">
-  <a href="https://discord.gg/kickbot" target="_blank" aria-label="Discord">
-    <img src="Discord-Logo.png" alt="Discord" class="icon">
-  </a>
-</div>
-
+    <!-- Main Panel -->
+    <main class="main-panel">
+      <h1>Kickbot Status</h1>
+      <p id="lastUpdate"></p>
+      <div id="content"></div>
+    </main>
+  </div>
 </body>
-</html>
-
