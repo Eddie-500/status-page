@@ -1,179 +1,62 @@
-body {
+.app-container {
+  display: flex;
+  height: 100vh;
+  background: #111;
+  color: #eee;
   font-family: Arial, sans-serif;
-  background: #0d1117;
-  color: #fff;
-  margin: 0;
+}
+
+.sidebar {
+  width: 220px;
+  background: rgba(0,0,0,0.8);
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar .logo img {
+  max-width: 150px;
+  margin: 0 auto 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
   padding: 0;
-  transition: background 0.3s ease;
 }
 
-header {
-  text-align: center;
-  padding: 20px;
-  border-bottom: 1px solid #333;
+.sidebar nav ul li {
+  margin: 10px 0;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  background: #161b22;
-}
-
-nav button {
-  background: none;
+.sidebar nav ul li button {
+  width: 100%;
+  background: transparent;
+  color: #aaa;
   border: none;
-  color: #9ca3af;
-  padding: 12px 20px;
-  cursor: pointer;
+  padding: 10px;
+  text-align: left;
   font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-nav button:hover {
-  color: #3b82f6;
-  transform: scale(1.05);
-}
-
-nav button.active {
-  color: #fff;
-  border-bottom: 2px solid #3b82f6;
-}
-
-.tab-content {
-  display: none;
-  padding: 20px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.4s ease;
-}
-
-.tab-content.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.status-box, .incident {
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  background: #1e293b;
-  border: 1px solid #333;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.status-box:hover, .incident:hover {
-  transform: scale(1.02);
-  background: #273549;
-}
-
-.operational { border-left: 5px solid #16a34a; }
-.down { border-left: 5px solid #dc2626; }
-.maintenance { border-left: 5px solid #f59e0b; }
-
-.incident h3 { margin: 0 0 10px 0; }
-.incident .more { color: #3b82f6; cursor: pointer; transition: color 0.3s ease; }
-.incident .more:hover { color: #60a5fa; }
-
-.incident-updates {
-  display: none;
-  margin-top: 10px;
-  animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Estados */
-.status-online { color: #16a34a; font-weight: bold; }
-.status-updating { color: #f59e0b; font-weight: bold; }
-.status-down { color: #dc2626; font-weight: bold; }
-
-/* Emoji + animación de carga */
-.loading {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border: 2px solid #f59e0b;
-  border-top: 2px solid transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-right: 6px;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0); }
-  100% { transform: rotate(360deg); }
-}
-
-.details-btn {
-  background-color: #1e90ff;
-  color: white;
-  border: none;
+  cursor: pointer;
   border-radius: 6px;
-  padding: 6px 12px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s;
 }
 
-.details-btn:hover {
-  background-color: #0d6efd;
-  transform: scale(1.05);
+.sidebar nav ul li button:hover {
+  background: #0f0;
+  color: #000;
 }
 
-.details-btn:active {
-  background-color: #0a58ca;
-  transform: scale(0.95);
+.sidebar-footer {
+  text-align: center;
 }
 
-/* Contenedor del logo centrado */
-.logo-wrap {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+.discord-icon {
+  width: 40px;
+  height: 40px;
 }
 
-/* Imagen del logo (responsivo) */
-.logo {
-  display: block;
-  height: clamp(56px, 8vw, 110px); /* se adapta a pantalla */
-  width: auto;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
-  transition: transform .25s ease, filter .25s ease;
+.main-panel {
+  flex: 1;
+  padding: 20px;
 }
-
-/* Efecto sutil al pasar el mouse */
-.logo:hover {
-  transform: scale(1.03);
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.45));
-}
-
-/* Si usas logo + texto en fila */
-.logo-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-}
-
-.discord-fixed .icon {
-  height: 22px;      /* controla solo la altura */
-  width: auto;       /* ancho se ajusta solo */
-  cursor: pointer;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.discord-fixed .icon:hover {
-  transform: scale(1.15);
-  filter: drop-shadow(0 0 8px #5865F2); /* brillo morado de Discord */
-}
-
-
-header h1 {
-  margin: 0;
-}
-
