@@ -161,7 +161,7 @@ nav button.active {
 }
 
 .discord-fixed .icon {
-  height: 44px;      /* controla solo la altura */
+  height: 22px;      /* controla solo la altura */
   width: auto;       /* ancho se ajusta solo */
   cursor: pointer;
   transition: transform 0.2s ease, filter 0.2s ease;
