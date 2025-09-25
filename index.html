@@ -1,31 +1,84 @@
-<body>
-  <div class="app-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kickbot Status</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="Short_logo_kickbot_v.2-removebg-preview.png" />
+  <script defer src="script.js"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Container -->
+  <div class="flex h-screen">
+
     <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo">
-        <img src="Short_logo_kickbot_v.2-removebg-preview.png" alt="Kickbot Logo">
+    <aside class="w-64 bg-gray-800 flex flex-col justify-between">
+      <div>
+        <!-- Logo -->
+        <div class="p-6 flex justify-center">
+          <img src="Short_logo_kickbot_v.2-removebg-preview.png" alt="Kickbot Logo" class="h-16">
+        </div>
+
+        <!-- Navigation -->
+        <nav class="px-4">
+          <ul class="space-y-2">
+            <li>
+              <button onclick="showSection('status')" class="w-full flex items-center px-4 py-2 rounded-lg hover:bg-green-500 hover:text-black transition">
+                📊 <span class="ml-2">Status</span>
+              </button>
+            </li>
+            <li>
+              <button onclick="showSection('maintenance')" class="w-full flex items-center px-4 py-2 rounded-lg hover:bg-yellow-500 hover:text-black transition">
+                🛠️ <span class="ml-2">Maintenance</span>
+              </button>
+            </li>
+            <li>
+              <button onclick="showSection('incidents')" class="w-full flex items-center px-4 py-2 rounded-lg hover:bg-red-500 hover:text-black transition">
+                ⚠️ <span class="ml-2">Incidents</span>
+              </button>
+            </li>
+            <li>
+              <button onclick="alert('Chatbot coming soon!')" class="w-full flex items-center px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-black transition">
+                🤖 <span class="ml-2">Chatbot</span>
+              </button>
+            </li>
+            <li>
+              <button onclick="alert('Support coming soon!')" class="w-full flex items-center px-4 py-2 rounded-lg hover:bg-purple-500 hover:text-black transition">
+                ❓ <span class="ml-2">Support</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav>
-        <ul>
-          <li><button onclick="showSection('status')">📊 Status</button></li>
-          <li><button onclick="showSection('maintenance')">🛠️ Maintenance</button></li>
-          <li><button onclick="showSection('incidents')">⚠️ Incidents</button></li>
-          <li><button onclick="alert('Chatbot coming soon!')">🤖 Chatbot</button></li>
-          <li><button onclick="alert('Support section coming soon!')">❓ Support</button></li>
-        </ul>
-      </nav>
-      <div class="sidebar-footer">
-        <a href="https://discord.gg/xxxx" target="_blank">
-          <img src="Discord-Logo.png" alt="Discord" class="discord-icon">
+
+      <!-- Footer -->
+      <div class="p-4 flex justify-center">
+        <a href="https://discord.gg/TU-LINK" target="_blank">
+          <img src="Discord-Logo.png" alt="Discord" class="h-10 hover:scale-110 transition">
         </a>
       </div>
     </aside>
 
     <!-- Main Panel -->
-    <main class="main-panel">
-      <h1>Kickbot Status</h1>
-      <p id="lastUpdate"></p>
-      <div id="content"></div>
+    <main class="flex-1 p-8 overflow-y-auto">
+      <h1 class="text-3xl font-bold mb-2">Kickbot Status</h1>
+      <p id="lastUpdate" class="text-gray-400 mb-6"></p>
+
+      <!-- Sections -->
+      <div id="status" class="tab-content active"></div>
+      <div id="maintenance" class="tab-content hidden"></div>
+      <div id="incidents" class="tab-content hidden"></div>
     </main>
   </div>
+
+  <script>
+    // Simple tab handler for sidebar buttons
+    function showSection(id) {
+      document.querySelectorAll('.tab-content').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
 </body>
+</html>
